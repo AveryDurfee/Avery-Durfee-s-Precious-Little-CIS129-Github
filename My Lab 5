@@ -1,0 +1,31 @@
+#Avery Durfee
+#3/9/2024
+#Calculates the amount of money made by collecting and returning bottles in a week
+# Lab 5 Bottle collection payout calculation program
+
+#Variables
+Total_Bottles = 0
+Today_Bottles = 0
+Total_Payout = 0
+Keep_Going = "y"
+Base_NBR_OF_DAYS = 7
+Base_Payout_Per_Bottle = .10
+#Runs the program
+while Keep_Going == "y":
+    NBR_OF_DAYS = Base_NBR_OF_DAYS
+    Total_Bottles = 0
+    Today_Bottles = 0
+    
+    #Asks for bottles collected on days 1 through 7
+    while NBR_OF_DAYS > 0:
+        #Prompt = "How many bottles were returned on day #" + str(8-NBR_OF_DAYS) + "?"
+        Today_Bottles = int(input("How many bottles were returned on day #" + str(8-NBR_OF_DAYS) + "?"))
+        Total_Bottles += Today_Bottles
+        NBR_OF_DAYS -= 1
+    #Calculates payout
+    Payout_Per_Bottle = Base_Payout_Per_Bottle
+    Total_Payout = Total_Bottles * Payout_Per_Bottle
+    #Displays payout and total gathered bottles 
+    print("You havbe returned ", Total_Bottles, " bottles this week.")
+    print("This has earned you $", Total_Payout, ".")
+    Keep_Going = input("Do you want to do another calculation? (enter y or n)")
